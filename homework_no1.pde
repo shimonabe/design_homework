@@ -90,9 +90,9 @@ void drawParticle(PVector center, float opacity, int lifetime) {
     noStroke();
 
     // 色の変更部分
-    float r = map(lifetime, 0, partLifetime, 255, 50);
-    float g = map(lifetime, 0, partLifetime, 50, 255);
-    float b = map(lifetime, 0, partLifetime, 150, 255);
+    float r = sin(frameCount * 0.05) * 127 + 128; // フレーム数を使って色を変化
+    float g = sin(frameCount * 0.05 + TWO_PI / 3) * 127 + 128;
+    float b = sin(frameCount * 0.05 + TWO_PI * 2 / 3) * 127 + 128;
     tint(r, g, b, opacity * 255);
 
     texture(sprite);
