@@ -89,6 +89,7 @@ void drawParticle(PVector center, float opacity, int lifetime) {
     beginShape(QUAD);
     noStroke();
 
+    // 色の変更部分
     float r = map(lifetime, 0, partLifetime, 255, 50);
     float g = map(lifetime, 0, partLifetime, 50, 255);
     float b = map(lifetime, 0, partLifetime, 150, 255);
@@ -108,6 +109,7 @@ void drawParticle(PVector center, float opacity, int lifetime) {
     ellipse(center.x, center.y, partSize, partSize);
   }
 }
+
 
 void initPositions() {
   positions = new PVector[npartTotal];
